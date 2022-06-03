@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API_Fetch_II.</title>
+
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+      body {
+        background-image: url("https://www.maketecheasier.com/assets/uploads/2020/06/Featured-Image-Live-Weather-Wallpapers-Android.jpg");
+      }
+
+      #main {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        /* grid-template-rows: 200px; */
+        grid-gap: 10px;
+        grid-template-areas:
+          "d d d d d d d d d d d d"
+          "a a a a b b b b b b b b"
+          "c c c c c c c c c c c c";
+        padding: 10px;
+      }
+
+      #climate {
+        grid-area: a;
+        /* background-color: yellow; */
+        padding: 0px 40px;
+      }
+      #map {
+        grid-area: b;
+        /* display: none; */
+        /* background-color: green; */
+      }
+      /* #wheaterData img{
+        
+        
+      } */
+      #dailyWheater {
+        grid-area: c;
+        /* background-color: rgb(177, 239, 243); */
+        border-radius: 30px;
+      }
+      #searchBar {
+        grid-area: d;
+        /* background-color: rgb(177, 239, 243); */
+        text-align: center;
+      }
+      #dailyWheater {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        /* grid-template-rows: 200px; */
+        grid-gap: 10px;
+        width: 60%;
+        margin: auto;
+        padding: 10px;
+      }
+      #dailyWheater div {
+        background-color: rgba(196, 221, 214, 0.432);
+        text-align: center;
+        border-radius: 30px;
+        padding: 10px;
+      }
+      #search {
+        width: 350px;
+        height: 30px;
+        border-radius: 20px;
+        border: 1px solid gainsboro;
+        padding: 10px;
+      }
+      #searchbtn {
+        height: 30px;
+        border-radius: 20px;
+        padding: 5px 40px;
+        border: 0px;
+        margin-left: 40px;
+      }
+      #searchbtn:hover {
+        background-color: rgb(247, 214, 166);
+        cursor: pointer;
+      }
+      #wheaterData{
+        color: rgb(255, 255, 255);
+        font-size: 20px;
+
+      }
+       #wheaterData p{
+        background-color: rgba(231, 216, 200, 0.397);
+        border-radius: 10px;
+        margin: 3px 0px;
+        padding: 5px 5px;
+      }
+      #gmap_canvas{
+        display: none;
+      }
+      li{
+      
+       margin-left: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="searchBar">
+        <form action="">
+          <input type="text" id="search" placeholder="Please Enter City Name" />
+          <input
+            type="button"
+            onclick="getData()"
+            value="Search"
+            id="searchbtn"
+          />
+        </form>
+      </div>
+      <div id="climate">
+        <div id="wheaterData"></div>
+      </div>
+      <div id="map">
+        <div class="gmap_canvas">
+          <iframe
+            width="100%"
+            height="400"
+            id="gmap_canvas"
+            src="https://maps.google.com/maps?&t=&z=13&ie=UTF8&iwloc=&output=embed"
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe
+          ><a href="https://123movies-a.com"></a><br />
+        </div>
+      </div>
+      <div id="dailyWheater"></div
+    </div>
+  </body>
+</html>
+
+<script src="/index.js"></script>
